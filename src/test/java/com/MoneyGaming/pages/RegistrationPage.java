@@ -21,12 +21,24 @@ public class RegistrationPage {
     @FindBy(xpath = "//label[@for='dob']")
     public WebElement warningMessage;
 
-    public void chooseTitle(){
+    public void fillTheForm(){
 
         select=new Select(title);
         select.selectByVisibleText("Mr");
 
+        firstName.sendKeys("Harun");
+        lastName.sendKeys("Onat");
+        termsCondition.click();
+        regButton.click();
+
+
     }
+
+    public String getWarningMessage(){
+        return warningMessage.getText();
+    }
+
+
 
 
 
